@@ -7,6 +7,7 @@ package gui;
 import static gui.PantallaPrincipal.BreezeSansBold;
 import static gui.PantallaPrincipal.BreezeSansRegular;
 import java.awt.Font;
+import java.awt.event.ItemListener;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
@@ -15,6 +16,9 @@ import javax.swing.JOptionPane;
  * @author borja
  */
 public class DialogoReservas extends javax.swing.JDialog {
+    
+    String [] menuCompleto = {"Bufé", "Wok", "Carta", "Cita con el Chef", "Sin menú"};
+    String [] menuReducido = {"Bufé", "Sin menú"};
 
     /**
      * Creates new form NewJDialog
@@ -72,6 +76,7 @@ public class DialogoReservas extends javax.swing.JDialog {
         setTitle("Nueva reserva");
         setBackground(new java.awt.Color(255, 255, 255));
         setIconImage(null);
+        setMinimumSize(new java.awt.Dimension(348, 471));
 
         jPanelCliente.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -172,6 +177,7 @@ public class DialogoReservas extends javax.swing.JDialog {
 
         jSpinnerFecha.setModel(new javax.swing.SpinnerDateModel());
         jSpinnerFecha.setEditor(new javax.swing.JSpinner.DateEditor(jSpinnerFecha, "dd-MM-yyyy"));
+        jSpinnerFecha.setPreferredSize(new java.awt.Dimension(118, 22));
         jSpinnerFecha.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
             public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
                 jSpinnerFechaMouseWheelMoved(evt);
@@ -180,6 +186,7 @@ public class DialogoReservas extends javax.swing.JDialog {
 
         jComboBoxTipoEvento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banquete", "Jornada", "Congreso", "Boda" }));
         jComboBoxTipoEvento.setToolTipText("");
+        jComboBoxTipoEvento.setPreferredSize(new java.awt.Dimension(118, 22));
         jComboBoxTipoEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxTipoEventoActionPerformed(evt);
@@ -187,6 +194,7 @@ public class DialogoReservas extends javax.swing.JDialog {
         });
 
         jSpinnerNumAsistentes.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jSpinnerNumAsistentes.setPreferredSize(new java.awt.Dimension(118, 22));
 
         jComboBoxTipoMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bufé", "Wok", "Carta", "Cita con el Chef", "Sin menú" }));
 
@@ -222,9 +230,9 @@ public class DialogoReservas extends javax.swing.JDialog {
                             .addComponent(jLabelTipoMenu))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jSpinnerFecha)
+                            .addComponent(jSpinnerFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jComboBoxTipoEvento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSpinnerNumAsistentes)
+                            .addComponent(jSpinnerNumAsistentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jComboBoxTipoMenu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanelReservaLayout.createSequentialGroup()
                         .addGroup(jPanelReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,7 +364,7 @@ public class DialogoReservas extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonConfirmarActionPerformed
 
     private void jComboBoxTipoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoEventoActionPerformed
-        habilitarOpciones();
+        habilitarOpciones();        
     }//GEN-LAST:event_jComboBoxTipoEventoActionPerformed
 
     private void habilitarOpciones() {
@@ -364,6 +372,13 @@ public class DialogoReservas extends javax.swing.JDialog {
 
         boolean esCongreso = tipoEvento.equals("Congreso");
         boolean esBoda = tipoEvento.equals("Boda");
+        boolean esJornada = tipoEvento.equals("Jornada");
+        
+        if (esCongreso || esJornada) {
+            establecerMenu(menuReducido);
+        } else{
+            establecerMenu(menuCompleto);
+        }
 
         jLabelCongreso.setEnabled(esCongreso);
         jLabelNumDias.setEnabled(esCongreso);
@@ -376,7 +391,17 @@ public class DialogoReservas extends javax.swing.JDialog {
         jRadioButtonCapilla.setEnabled(esBoda);
 
     }
-
+    
+    
+    
+    private void establecerMenu(String[] items){
+        jComboBoxTipoMenu.removeAllItems();
+        for (String item : items){
+            jComboBoxTipoMenu.addItem(item);
+        }
+        
+    }
+    
     private void establecerTipografia() {
         Font breezeRegular = BreezeSansRegular.deriveFont(12f);
         Font breezeBold = BreezeSansBold.deriveFont(12f);
