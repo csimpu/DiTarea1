@@ -73,6 +73,7 @@ public class DialogoReservas extends javax.swing.JDialog {
         jRadioButtonAlojamiento = new javax.swing.JRadioButton();
         jRadioButtonCapilla = new javax.swing.JRadioButton();
         jButtonConfirmar = new javax.swing.JButton();
+        jLabelTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Nueva reserva");
@@ -327,6 +328,8 @@ public class DialogoReservas extends javax.swing.JDialog {
             }
         });
 
+        jLabelTitulo.setText("Salón Premium");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -339,6 +342,10 @@ public class DialogoReservas extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtonConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelTitulo)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -346,12 +353,14 @@ public class DialogoReservas extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabelTitulo)
+                .addGap(9, 9, 9)
                 .addComponent(jPanelCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanelReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonConfirmar)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -443,6 +452,8 @@ public class DialogoReservas extends javax.swing.JDialog {
         for (JComponent k : textosCursiva){
             k.setFont(breezeItalic);
         }
+        
+        jLabelTitulo.setFont(BreezeSansBold.deriveFont(14F));
 
     }
 
@@ -465,6 +476,7 @@ public class DialogoReservas extends javax.swing.JDialog {
     private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JLabel jLabelTipoEvento;
     private javax.swing.JLabel jLabelTipoMenu;
+    private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JPanel jPanelCliente;
     private javax.swing.JPanel jPanelReserva;
     private javax.swing.JRadioButton jRadioButtonAlojamiento;
