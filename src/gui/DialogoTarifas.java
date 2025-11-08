@@ -4,6 +4,11 @@
  */
 package gui;
 
+import static gui.PantallaPrincipal.BreezeSansBold;
+import static gui.PantallaPrincipal.BreezeSansRegular;
+import java.awt.Font;
+import javax.swing.JComponent;
+
 /**
  *
  * @author borja
@@ -16,6 +21,10 @@ public class DialogoTarifas extends javax.swing.JDialog {
     public DialogoTarifas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+        this.getContentPane().setBackground(java.awt.Color.WHITE);
+        
+        establecerTipografia();
     }
 
     /**
@@ -29,70 +38,184 @@ public class DialogoTarifas extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jLabelTarifa = new javax.swing.JLabel();
         jLabelBodasBanquetes = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        jLabelAlquilerSalon = new javax.swing.JLabel();
+        jLabelMenus = new javax.swing.JLabel();
+        jLabelBufe = new javax.swing.JLabel();
+        jLabelWok = new javax.swing.JLabel();
+        jLabelCarta = new javax.swing.JLabel();
+        jLabelChef = new javax.swing.JLabel();
+        jLabelCapilla = new javax.swing.JLabel();
+        jLabelCongresosJornadas = new javax.swing.JLabel();
+        jLabelPrecioPersona = new javax.swing.JLabel();
+        jLabelMenuJornadas = new javax.swing.JLabel();
+        jLabelAlojamiento = new javax.swing.JLabel();
+        jTextFieldMenuJornada = new javax.swing.JTextField();
+        jTextFieldPrecioPersona = new javax.swing.JTextField();
+        jTextFieldCapilla = new javax.swing.JTextField();
+        jTextFieldChef = new javax.swing.JTextField();
+        jTextFieldCarta = new javax.swing.JTextField();
+        jTextFieldWok = new javax.swing.JTextField();
+        jTextFieldBufe = new javax.swing.JTextField();
+        jTextFieldAlquilerSalon = new javax.swing.JTextField();
+        jTextFieldAlojamiento = new javax.swing.JTextField();
+        jButtonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(348, 472));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabelTarifa.setText("Tarifa de precios");
 
         jLabelBodasBanquetes.setText("Bodas y Banquetes");
 
-        jLabel1.setText("jLabel1");
+        jLabelAlquilerSalon.setText("Alquiler de salón");
 
-        jLabel9.setText("jLabel9");
+        jLabelMenus.setText("Menús");
 
-        jLabel10.setText("jLabel10");
+        jLabelBufe.setText("Bufé");
 
-        jLabel11.setText("jLabel11");
+        jLabelWok.setText("Wok");
 
-        jLabel12.setText("jLabel12");
+        jLabelCarta.setText("Carta");
 
-        jLabel13.setText("jLabel13");
+        jLabelChef.setText("Cita con el Chef");
 
-        jLabel14.setText("jLabel14");
+        jLabelCapilla.setText("Servicio de capilla");
 
-        jLabel15.setText("jLabel15");
+        jLabelCongresosJornadas.setText("Congresos y jornadas");
 
-        jLabel16.setText("jLabel16");
+        jLabelPrecioPersona.setText("Precio por persona");
+
+        jLabelMenuJornadas.setText("Menú jornadas y congresos");
+
+        jLabelAlojamiento.setText("Alojamiento congresos");
+
+        jTextFieldMenuJornada.setEditable(false);
+        jTextFieldMenuJornada.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextFieldMenuJornada.setText("25€ / persona");
+        jTextFieldMenuJornada.setBorder(null);
+        jTextFieldMenuJornada.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldMenuJornada.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldMenuJornada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldMenuJornadaActionPerformed(evt);
+            }
+        });
+
+        jTextFieldPrecioPersona.setEditable(false);
+        jTextFieldPrecioPersona.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextFieldPrecioPersona.setText("40€ / persona y día");
+        jTextFieldPrecioPersona.setBorder(null);
+        jTextFieldPrecioPersona.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldPrecioPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        jTextFieldCapilla.setEditable(false);
+        jTextFieldCapilla.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextFieldCapilla.setText("450€");
+        jTextFieldCapilla.setBorder(null);
+        jTextFieldCapilla.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldCapilla.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        jTextFieldChef.setEditable(false);
+        jTextFieldChef.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextFieldChef.setText("130€ / persona");
+        jTextFieldChef.setBorder(null);
+        jTextFieldChef.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldChef.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldChef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldChefActionPerformed(evt);
+            }
+        });
+
+        jTextFieldCarta.setEditable(false);
+        jTextFieldCarta.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextFieldCarta.setText("95€ / persona");
+        jTextFieldCarta.setBorder(null);
+        jTextFieldCarta.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldCarta.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        jTextFieldWok.setEditable(false);
+        jTextFieldWok.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextFieldWok.setText("75€ / persona");
+        jTextFieldWok.setBorder(null);
+        jTextFieldWok.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldWok.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        jTextFieldBufe.setEditable(false);
+        jTextFieldBufe.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextFieldBufe.setText("65€ / persona");
+        jTextFieldBufe.setBorder(null);
+        jTextFieldBufe.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldBufe.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldBufe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBufeActionPerformed(evt);
+            }
+        });
+
+        jTextFieldAlquilerSalon.setEditable(false);
+        jTextFieldAlquilerSalon.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextFieldAlquilerSalon.setText("600€");
+        jTextFieldAlquilerSalon.setBorder(null);
+        jTextFieldAlquilerSalon.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldAlquilerSalon.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldAlquilerSalon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldAlquilerSalonActionPerformed(evt);
+            }
+        });
+
+        jTextFieldAlojamiento.setEditable(false);
+        jTextFieldAlojamiento.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextFieldAlojamiento.setText("80€ / noche");
+        jTextFieldAlojamiento.setBorder(null);
+        jTextFieldAlojamiento.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldAlojamiento.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelTarifa)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(6, 6, 6)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelCongresosJornadas)
+                            .addComponent(jLabelBodasBanquetes)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(jLabelBodasBanquetes))
-                            .addComponent(jLabelTarifa)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel11))))))
-                .addContainerGap(194, Short.MAX_VALUE))
+                                    .addComponent(jLabelMenus)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelMenuJornadas)
+                                            .addComponent(jLabelPrecioPersona)
+                                            .addComponent(jLabelCapilla)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabelBufe)
+                                                    .addComponent(jLabelWok)
+                                                    .addComponent(jLabelCarta)
+                                                    .addComponent(jLabelChef)))
+                                            .addComponent(jLabelAlquilerSalon)
+                                            .addComponent(jLabelAlojamiento))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextFieldAlquilerSalon)
+                                            .addComponent(jTextFieldBufe)
+                                            .addComponent(jTextFieldWok)
+                                            .addComponent(jTextFieldCarta)
+                                            .addComponent(jTextFieldChef)
+                                            .addComponent(jTextFieldCapilla)
+                                            .addComponent(jTextFieldPrecioPersona, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                                            .addComponent(jTextFieldMenuJornada)
+                                            .addComponent(jTextFieldAlojamiento))))))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,25 +224,53 @@ public class DialogoTarifas extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelBodasBanquetes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelAlquilerSalon)
+                    .addComponent(jTextFieldAlquilerSalon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
+                .addComponent(jLabelMenus)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelBufe)
+                    .addComponent(jTextFieldBufe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelWok)
+                    .addComponent(jTextFieldWok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCarta)
+                    .addComponent(jTextFieldCarta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelChef)
+                    .addComponent(jTextFieldChef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCapilla)
+                    .addComponent(jTextFieldCapilla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelCongresosJornadas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelPrecioPersona)
+                    .addComponent(jTextFieldPrecioPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel16)
-                .addGap(0, 218, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelMenuJornadas)
+                    .addComponent(jTextFieldMenuJornada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelAlojamiento)
+                    .addComponent(jTextFieldAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
+
+        jButtonSalir.setText("Salir");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,73 +280,91 @@ public class DialogoTarifas extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonSalir)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSalir)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DialogoTarifas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DialogoTarifas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DialogoTarifas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DialogoTarifas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButtonSalirActionPerformed
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                DialogoTarifas dialog = new DialogoTarifas(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
+    private void jTextFieldBufeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBufeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBufeActionPerformed
+
+    private void jTextFieldChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChefActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldChefActionPerformed
+
+    private void jTextFieldAlquilerSalonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAlquilerSalonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldAlquilerSalonActionPerformed
+
+    private void jTextFieldMenuJornadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMenuJornadaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldMenuJornadaActionPerformed
+
+        private void establecerTipografia() {
+        Font breezeRegular = BreezeSansRegular.deriveFont(12f);
+        Font breezeBold = BreezeSansBold.deriveFont(12f);
+        Font breezeItalic = BreezeSansRegular.deriveFont(2, 12F);
+
+        JComponent[] textosRegular = {jButtonSalir, jLabelAlojamiento, jLabelAlquilerSalon, jLabelBufe, jLabelCapilla, jLabelCarta, jLabelChef, jLabelMenuJornadas, jLabelPrecioPersona, jLabelWok, jTextFieldAlojamiento, jTextFieldAlquilerSalon, jTextFieldBufe, jTextFieldCapilla, jTextFieldCarta, jTextFieldChef, jTextFieldMenuJornada, jTextFieldPrecioPersona, jTextFieldWok};
+        for (JComponent i : textosRegular) {
+            i.setFont(breezeRegular);
+        }
+
+        JComponent[] textosNegrita = {jLabelTarifa};
+        for (JComponent j : textosNegrita){
+            j.setFont(breezeBold);
+        }
+        
+        JComponent[] textosCursiva = {jLabelBodasBanquetes, jLabelCongresosJornadas, jLabelMenus};
+        for (JComponent k : textosCursiva){
+            k.setFont(breezeItalic);
+        }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton jButtonSalir;
+    private javax.swing.JLabel jLabelAlojamiento;
+    private javax.swing.JLabel jLabelAlquilerSalon;
     private javax.swing.JLabel jLabelBodasBanquetes;
+    private javax.swing.JLabel jLabelBufe;
+    private javax.swing.JLabel jLabelCapilla;
+    private javax.swing.JLabel jLabelCarta;
+    private javax.swing.JLabel jLabelChef;
+    private javax.swing.JLabel jLabelCongresosJornadas;
+    private javax.swing.JLabel jLabelMenuJornadas;
+    private javax.swing.JLabel jLabelMenus;
+    private javax.swing.JLabel jLabelPrecioPersona;
     private javax.swing.JLabel jLabelTarifa;
+    private javax.swing.JLabel jLabelWok;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextFieldAlojamiento;
+    private javax.swing.JTextField jTextFieldAlquilerSalon;
+    private javax.swing.JTextField jTextFieldBufe;
+    private javax.swing.JTextField jTextFieldCapilla;
+    private javax.swing.JTextField jTextFieldCarta;
+    private javax.swing.JTextField jTextFieldChef;
+    private javax.swing.JTextField jTextFieldMenuJornada;
+    private javax.swing.JTextField jTextFieldPrecioPersona;
+    private javax.swing.JTextField jTextFieldWok;
     // End of variables declaration//GEN-END:variables
 }
