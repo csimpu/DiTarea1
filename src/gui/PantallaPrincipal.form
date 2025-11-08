@@ -12,9 +12,19 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemNuevaReserva">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nuevas reserva..."/>
+                <Property name="toolTipText" type="java.lang.String" value="Accede a la venta Nueva reserva"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemNuevaReservaActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemTarifas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tarifas y precios..."/>
+                <Property name="toolTipText" type="java.lang.String" value="Accede a la ventana Tarifas y precios"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemTarifasActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -49,16 +59,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jLabelDescripcionBoton" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <EmptySpace pref="102" max="32767" attributes="0"/>
-              <Component id="jLabelIcono" min="-2" pref="191" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jLabelIcono" alignment="0" pref="191" max="32767" attributes="0"/>
+                  <Component id="jButtonAcceder" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jButtonTarifas" alignment="0" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace pref="107" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
-              <Component id="jButtonAcceder" min="-2" pref="149" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -68,10 +76,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabelIcono" min="-2" pref="201" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jLabelDescripcionBoton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButtonAcceder" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jButtonTarifas" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -79,17 +87,12 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="jButtonAcceder">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Acceder"/>
+        <Property name="text" type="java.lang.String" value="Nueva reserva"/>
+        <Property name="toolTipText" type="java.lang.String" value="Accede a la ventana Nueva reserva"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAccederActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelDescripcionBoton">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Accede a la ventana de nueva reserva"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelIcono">
       <Properties>
@@ -97,6 +100,15 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonTarifas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tarifas y precios"/>
+        <Property name="toolTipText" type="java.lang.String" value="Accede a la ventana Tarifas y precios"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonTarifasActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

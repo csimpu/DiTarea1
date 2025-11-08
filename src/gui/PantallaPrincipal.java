@@ -38,8 +38,11 @@ public class PantallaPrincipal
 
         jMenuReservas.setFont(BreezeSansRegular.deriveFont(12f));
         jMenuItemNuevaReserva.setFont(BreezeSansRegular.deriveFont(12f));
-        jLabelDescripcionBoton.setFont(BreezeSansRegular.deriveFont(12f));
         jButtonAcceder.setFont(BreezeSansRegular.deriveFont(12f));
+        jButtonTarifas.setFont(BreezeSansRegular.deriveFont(12f));
+        jMenuReservas.setFont(BreezeSansRegular.deriveFont(12f));
+        jMenuItemNuevaReserva.setFont(BreezeSansRegular.deriveFont(12f));
+        jMenuItemTarifas.setFont(BreezeSansRegular.deriveFont(12f));
 
     }
 
@@ -52,37 +55,54 @@ public class PantallaPrincipal
     private void initComponents() {
 
         jButtonAcceder = new javax.swing.JButton();
-        jLabelDescripcionBoton = new javax.swing.JLabel();
         jLabelIcono = new javax.swing.JLabel();
+        jButtonTarifas = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuReservas = new javax.swing.JMenu();
         jMenuItemNuevaReserva = new javax.swing.JMenuItem();
+        jMenuItemTarifas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Salones Talavera - Gestión de reservas");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jButtonAcceder.setText("Acceder");
+        jButtonAcceder.setText("Nueva reserva");
+        jButtonAcceder.setToolTipText("Accede a la ventana Nueva reserva");
         jButtonAcceder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAccederActionPerformed(evt);
             }
         });
 
-        jLabelDescripcionBoton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelDescripcionBoton.setText("Accede a la ventana de nueva reserva");
-
         jLabelIcono.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButtonTarifas.setText("Tarifas y precios");
+        jButtonTarifas.setToolTipText("Accede a la ventana Tarifas y precios");
+        jButtonTarifas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTarifasActionPerformed(evt);
+            }
+        });
 
         jMenuReservas.setText("Reservas");
 
         jMenuItemNuevaReserva.setText("Nuevas reserva...");
+        jMenuItemNuevaReserva.setToolTipText("Accede a la venta Nueva reserva");
         jMenuItemNuevaReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemNuevaReservaActionPerformed(evt);
             }
         });
         jMenuReservas.add(jMenuItemNuevaReserva);
+
+        jMenuItemTarifas.setText("Tarifas y precios...");
+        jMenuItemTarifas.setToolTipText("Accede a la ventana Tarifas y precios");
+        jMenuItemTarifas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemTarifasActionPerformed(evt);
+            }
+        });
+        jMenuReservas.add(jMenuItemTarifas);
 
         jMenuBar1.add(jMenuReservas);
 
@@ -92,15 +112,13 @@ public class PantallaPrincipal
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelDescripcionBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(102, Short.MAX_VALUE)
-                .addComponent(jLabelIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelIcono, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                    .addComponent(jButtonAcceder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonTarifas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(107, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(125, 125, 125)
-                .addComponent(jButtonAcceder, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,10 +126,10 @@ public class PantallaPrincipal
                 .addContainerGap()
                 .addComponent(jLabelIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabelDescripcionBoton)
-                .addGap(18, 18, 18)
                 .addComponent(jButtonAcceder)
-                .addGap(39, 39, 39))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonTarifas)
+                .addGap(38, 38, 38))
         );
 
         pack();
@@ -127,6 +145,16 @@ public class PantallaPrincipal
         DialogoReservas dialogoReservas = new DialogoReservas(this, true);
         dialogoReservas.setVisible(true);
     }//GEN-LAST:event_jButtonAccederActionPerformed
+
+    private void jButtonTarifasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTarifasActionPerformed
+        DialogoTarifas dialogoTarifas = new DialogoTarifas(this, true);
+        dialogoTarifas.setVisible(true);
+    }//GEN-LAST:event_jButtonTarifasActionPerformed
+
+    private void jMenuItemTarifasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTarifasActionPerformed
+        DialogoTarifas dialogoTarifas = new DialogoTarifas(this, true);
+        dialogoTarifas.setVisible(true);
+    }//GEN-LAST:event_jMenuItemTarifasActionPerformed
 
     public static Font BreezeSansRegular;
     public static Font BreezeSansBold;
@@ -200,10 +228,11 @@ public class PantallaPrincipal
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAcceder;
-    private javax.swing.JLabel jLabelDescripcionBoton;
+    private javax.swing.JButton jButtonTarifas;
     private javax.swing.JLabel jLabelIcono;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemNuevaReserva;
+    private javax.swing.JMenuItem jMenuItemTarifas;
     private javax.swing.JMenu jMenuReservas;
     // End of variables declaration//GEN-END:variables
 }
