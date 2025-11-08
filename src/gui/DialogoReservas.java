@@ -19,6 +19,8 @@ public class DialogoReservas extends javax.swing.JDialog {
     
     String [] menuCompleto = {"Bufé", "Wok", "Carta", "Cita con el Chef", "Sin menú"};
     String [] menuReducido = {"Bufé", "Sin menú"};
+    
+    
 
     /**
      * Creates new form NewJDialog
@@ -81,14 +83,19 @@ public class DialogoReservas extends javax.swing.JDialog {
         jPanelCliente.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabelDatosCliente.setText("Datos del cliente");
+        jLabelDatosCliente.setToolTipText("Datos del cliente que realiza la reserva");
 
         jLabelNombre.setText("Nombre");
+        jLabelNombre.setToolTipText("Nombre del cliente que realiza la reserva");
 
         jLabelApellidos.setText("Apellidos");
+        jLabelApellidos.setToolTipText("Apellidos del cliente que realiza la reserva");
 
         jLabelTelefono.setText("Teléfono");
+        jLabelTelefono.setToolTipText("Teléfono del cliente que realiza la reserva");
 
         jLabelDni.setText("DNI");
+        jLabelDni.setToolTipText("DNI del cliente que realiza la reserva");
 
         jTextFieldNombre.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -156,24 +163,32 @@ public class DialogoReservas extends javax.swing.JDialog {
         jPanelReserva.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabelDatosReserva.setText("Datos de la reserva");
+        jLabelDatosReserva.setToolTipText("Datos de la reserva");
 
         jLabelFecha.setText("Fecha");
+        jLabelFecha.setToolTipText("Fecha de realización del evento");
 
         jLabelTipoEvento.setText("Tipo de evento");
+        jLabelTipoEvento.setToolTipText("Tipo de evento: Banquete, Boda, Jornada o Congreso");
 
         jLabelNumAsistentes.setText("Número de asistentes");
+        jLabelNumAsistentes.setToolTipText("El número de asistentes al evento");
 
         jLabelTipoMenu.setText("Tipo de menú");
+        jLabelTipoMenu.setToolTipText("El tipo de menú del evento");
 
         jLabelCongreso.setText("Congreso");
 
         jLabelNumDias.setText("Número de días");
+        jLabelNumDias.setToolTipText("Número de días que durará el congreso");
 
         jLabelAlojamiento.setText("¿Necesita alojamiento?");
+        jLabelAlojamiento.setToolTipText("En caso de necesitar alojamiento, marque la casilla");
 
         jLabelBoda.setText("Boda");
 
         jLabelCapilla.setText("¿Necesita capilla?");
+        jLabelCapilla.setToolTipText("En caso de necesitar capilla capilla, marque la casilla");
 
         jSpinnerFecha.setModel(new javax.swing.SpinnerDateModel());
         jSpinnerFecha.setEditor(new javax.swing.JSpinner.DateEditor(jSpinnerFecha, "dd-MM-yyyy"));
@@ -185,7 +200,7 @@ public class DialogoReservas extends javax.swing.JDialog {
         });
 
         jComboBoxTipoEvento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banquete", "Jornada", "Congreso", "Boda" }));
-        jComboBoxTipoEvento.setToolTipText("");
+        jComboBoxTipoEvento.setToolTipText("Banquete, Boda, Jornada, Congreso");
         jComboBoxTipoEvento.setPreferredSize(new java.awt.Dimension(118, 22));
         jComboBoxTipoEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -301,6 +316,7 @@ public class DialogoReservas extends javax.swing.JDialog {
         );
 
         jButtonConfirmar.setText("Confirmar reserva");
+        jButtonConfirmar.setToolTipText("Confirma la reserva");
         jButtonConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConfirmarActionPerformed(evt);
@@ -376,8 +392,10 @@ public class DialogoReservas extends javax.swing.JDialog {
         
         if (esCongreso || esJornada) {
             establecerMenu(menuReducido);
+            jComboBoxTipoMenu.setToolTipText("Bufé, Sin menú");
         } else{
             establecerMenu(menuCompleto);
+            jComboBoxTipoMenu.setToolTipText("Bufé, Wok, Carta, Cita con el Chef, Sin menú");
         }
 
         jLabelCongreso.setEnabled(esCongreso);
@@ -407,8 +425,7 @@ public class DialogoReservas extends javax.swing.JDialog {
         Font breezeBold = BreezeSansBold.deriveFont(12f);
         Font breezeItalic = BreezeSansRegular.deriveFont(2, 12F);
 
-        JComponent[] textosRegular = {jButtonConfirmar, jComboBoxTipoEvento, jComboBoxTipoMenu, jLabelAlojamiento, jLabelApellidos, jLabelCapilla, jLabelDni, jLabelFecha, jLabelNombre, jLabelNumAsistentes, jLabelNumDias, jLabelTelefono, jLabelTipoEvento, jLabelTipoMenu, jSpinnerFecha, jSpinnerNumAsistentes, jSpinnerNumDias, jTextFieldApellidos, jTextFieldDni, jTextFieldNombre, jTextFieldTelefono
-        };
+        JComponent[] textosRegular = {jButtonConfirmar, jComboBoxTipoEvento, jComboBoxTipoMenu, jLabelAlojamiento, jLabelApellidos, jLabelCapilla, jLabelDni, jLabelFecha, jLabelNombre, jLabelNumAsistentes, jLabelNumDias, jLabelTelefono, jLabelTipoEvento, jLabelTipoMenu, jSpinnerFecha, jSpinnerNumAsistentes, jSpinnerNumDias, jTextFieldApellidos, jTextFieldDni, jTextFieldNombre, jTextFieldTelefono};
         for (JComponent i : textosRegular) {
             i.setFont(breezeRegular);
         }
