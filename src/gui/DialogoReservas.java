@@ -97,8 +97,10 @@ public class DialogoReservas extends javax.swing.JDialog {
         jLabelDni.setText("DNI");
         jLabelDni.setToolTipText("DNI del cliente que realiza la reserva");
 
+        jTextFieldNombre.setToolTipText("Formato: Nombre");
         jTextFieldNombre.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jTextFieldApellidos.setToolTipText("Formato: Apellido1 Apellido2");
         jTextFieldApellidos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextFieldApellidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,8 +108,10 @@ public class DialogoReservas extends javax.swing.JDialog {
             }
         });
 
+        jTextFieldTelefono.setToolTipText("Formato: 666666666");
         jTextFieldTelefono.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jTextFieldDni.setToolTipText("Formato: 12345678A");
         jTextFieldDni.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextFieldDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
